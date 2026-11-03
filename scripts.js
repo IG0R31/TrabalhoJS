@@ -40,7 +40,7 @@ function renderizar(){
     lista.innerHTML = '';
 
     //Exibe apenas as tarefas do momento atual com o filter()
-    const tarefasDisponiveis = tarefas.filter(tarefa = > {
+    const tarefasDisponiveis = tarefas.filter(tarefa => {
         if (filtroAtual === 'disponivel'){
             return !tarefa.concluida;
         }
@@ -57,13 +57,13 @@ function renderizar(){
         const texto = document.createElement('span');
         texto.textContent = tarefa.descricao;
         if(tarefa.concluida){
-            texto.style.textDecoration = 'texto-riscado';
+            texto.style.textDecoration = 'line-through';
         }
-        const botaoConcluir = document.createElement('botao');
-        botaoConcluir.textContent = tarefa.concluida ? 'Desfazer':'Concluir';
-        botaoConcluir.addEventListener('clicl', () => alterarTarefa(tarefa.id));
+        const botaoConcluir = document.createElement('button');
+        botaoConcluir.textContent = tarefa.conline-throughcluida ? 'Desfazer':'Concluir';
+        botaoConcluir.addEventListener('click', () => alterarTarefa(tarefa.id));
 
-        const botaoExcluir = document.createElement('botao');
+        const botaoExcluir = document.createElement('button');
         botaoExcluir.textContent = 'Exlcuir';
         botaoExcluir.addEventListener('click', () => removerTarefa(tarefa.id));
 
